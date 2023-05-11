@@ -9,23 +9,19 @@
 		<property name="connection.url">jdbc:mysql://localhost/library?serverTimezone=UTC&amp;useSSL=false</property>
         <property name="connection.username">root</property>
         <property name="connection.password">1111</property>
-        <property name="hibernate.connection.ssl.enabled">false</property>
-     
+        <property name="hibernate.connection.ssl.enabled">false</property>    
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-
         <property name="show_sql">true</property>
-
-        <property name="current_session_context_class">thread</property>
-        <!-- <property name="hbm2ddl.auto">create-drop</property>Drop and re-create the database schema on startup -->
-       
-        <property name="hibernate.connection.ssl.enabled">false</property>
-        
-        
+        <property name="current_session_context_class">thread</property>      
+        <property name="hibernate.connection.ssl.enabled">false</property>        
         <property name="hbm2ddl.auto">update</property>
         <property name="hibernate.dbcp.initialSize">5</property>
         <property name="hibernate.dbcp.maxTotal">20</property>
         <property name="hibernate.dbcp.maxIdle">10</property>
         <property name="hibernate.dbcp.minIdle">5</property>
+        <property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">false</property>
+		<property name="hibernate.use_sql_comments">false</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <mapping class="com.lab.database.entity.BookFund" />
         <mapping class="com.lab.database.entity.BookLendingJournal" />

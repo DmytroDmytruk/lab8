@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -11,9 +13,36 @@ import jakarta.persistence.Table;
 @Table(name = "catalog")
 public class Catalog {
 
-    @Id
+	public Catalog() {
+		
+	}
+	
+    public Catalog(String author, String title, String publisher, Integer year, String type, Integer numberOfPages,
+			String theme, Integer price) {
+		this.author = author;
+		this.title = title;
+		this.publisher = publisher;
+		this.year = year;
+		this.type = type;
+		this.numberOfPages = numberOfPages;
+		this.theme = theme;
+		this.price = price;
+	}
+
+
+	public int getLibraryCode() {
+		return libraryCode;
+	}
+
+	public void setLibraryCode(int libraryCode) {
+		this.libraryCode = libraryCode;
+	}
+
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "library_code")
-    private String libraryCode;
+    private int libraryCode;
 
     @Column(name = "author")
     private String author;
@@ -21,7 +50,23 @@ public class Catalog {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "publisher")
+    public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	@Column(name = "publisher")
     private String publisher;
 
     @Column(name = "year")

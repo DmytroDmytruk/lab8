@@ -11,11 +11,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 
 @Entity
 @Table(name = "lending_plans")
+@SequenceGenerator(name = "lending_plans_seq", sequenceName = "lending_plans_seq", allocationSize = 1)
 public class LendingPlans {
 
     @EmbeddedId
